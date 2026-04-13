@@ -1,0 +1,1286 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/12/2026 10:05:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="THNDEV05"
+  DTS:CreatorName="THNDEV05\ACER"
+  DTS:DTSID="{977C4DC4-5942-4097-A407-6F6DEC498216}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{74B3E4F2-A9D1-4946-BABB-2390C3B3AC55}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{27FEA584-7ABA-4346-926C-BACFEB4798AA}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ACER\Documents\VKU Subjects\Data Warehouse\Final\Coffee Shop Sales - Transactions.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3E0CA973-B9E7-4999-B735-7CFA7A093517}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ACER\Documents\VKU Subjects\Data Warehouse\Final\Coffee Shop Sales - Transactions.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{7B2E556E-7807-4CC3-903B-008E27A51D08}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Time"
+              DTS:DTSID="{800C7B77-EBA6-4126-8F79-129BF7312C88}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Status"
+              DTS:DTSID="{EE02DEDE-4F2D-433F-BE82-53B5A12F8C81}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderDetail"
+              DTS:DTSID="{21E8A820-0314-4784-B517-1825B6E3EBD4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StoreLocation"
+              DTS:DTSID="{223135FE-B1F1-4C1D-9C50-F593F7530CA1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{788F1D0D-E783-4BED-B793-D981E285E79E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{808EA7D8-39D6-466E-BD23-CC7D81F9455A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{69F3F402-B235-4354-9C19-2C9A1030FAB7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{A14856EE-F798-4103-A0C3-61F4184F5785}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Detail"
+              DTS:DTSID="{06D008AE-0414-4218-A14D-D63B75F8521A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Revenue"
+              DTS:DTSID="{54EFCF9C-95E8-4026-9BEB-E0040AA4DEC7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hour"
+              DTS:DTSID="{F9E96AD5-698C-4E37-8FFC-3D302DDA0514}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailUser"
+              DTS:DTSID="{78FF73A3-6088-408A-86BA-E49BA4BB7B21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserBirthDate"
+              DTS:DTSID="{70C0E8D8-F1C4-4E85-8B66-88C5CCEF4D1B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserGender"
+              DTS:DTSID="{148C7D8D-E6C0-47F6-A739-1D6DF9584D87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserName"
+              DTS:DTSID="{1611CAFD-8F36-49CB-950D-24A3C77EE961}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{74FF7C02-6F7F-4020-AD19-F647DFDBD759}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ACER\Documents\VKU Subjects\Data Warehouse\Final\Coffee Shop Sales - Transactions.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{70879D62-A9EE-4966-ADFB-AD4ED60E155A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Time"
+              DTS:DTSID="{67649ACC-BCA4-452D-8087-7222356D37BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Status"
+              DTS:DTSID="{3CD6BD6E-143C-4EDC-BEF7-943BF5859191}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderDetail"
+              DTS:DTSID="{42552085-FE2E-48F5-B344-5CE42ACAA840}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StoreLocation"
+              DTS:DTSID="{189FA25A-FA4E-4CFC-AE3B-D83EA492CF9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{E233A87E-5083-4ECB-AC11-F2E1739900A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{DD475316-CE08-4DF8-8A3D-E1B861020D16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{002A6C5F-EA07-4138-B709-D1AA5DE820AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{D1D6969C-EC1F-467F-A27A-B4EB25B5F145}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Detail"
+              DTS:DTSID="{556FCD35-CBB5-44B3-B43E-436228FC9F51}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Revenue"
+              DTS:DTSID="{65A0E0AF-FD42-4152-B783-6AF9905E4B7A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hour"
+              DTS:DTSID="{F7AE9AF7-A286-4B69-8491-E7824075B640}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailUser"
+              DTS:DTSID="{B50027B9-5083-47CB-925E-84FA6F770EEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserBirthDate"
+              DTS:DTSID="{AD30F742-5669-4941-A3A1-A0A261FC9EF4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserGender"
+              DTS:DTSID="{33029FF1-3B8E-41F0-A88C-F5184E5F0848}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserName"
+              DTS:DTSID="{E7FC79D0-7FB5-46C0-A4FA-6A84BF060685}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A6B4EF8E-FB0D-4A12-9FB8-5903FA9A632F}"
+      DTS:ObjectName="Flat File Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ACER\Documents\VKU Subjects\Data Warehouse\Final\Coffee Shop Sales - Transactions.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{88E8F126-05E2-499F-9815-D63A27AB9C48}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Time"
+              DTS:DTSID="{A426B877-6801-4A13-BA1F-C39218F90919}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Status"
+              DTS:DTSID="{10E12425-7358-41A7-A302-1C6FBBEBB1A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderDetail"
+              DTS:DTSID="{A19189AB-5164-4A65-848E-2C0F1FBB5DFD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StoreLocation"
+              DTS:DTSID="{B80196AC-A18F-44FF-869B-9A4757A1EEAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{AF9172E7-7701-410F-BC62-66AC1F2F0658}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{90D55ED5-23B9-414F-9457-2D17C74E5C1F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{63C6D65D-24E6-489D-A0CB-0F7EB37E006E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{A02D7538-A0DA-4547-947D-EA8A8E1294A9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Detail"
+              DTS:DTSID="{FE55CEAD-11F9-4DD8-A256-4C66D5E88562}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Revenue"
+              DTS:DTSID="{2420EA67-4638-4413-B87B-99F6C991397A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hour"
+              DTS:DTSID="{6A5332CF-47F3-4393-A181-C74939AABEE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailUser"
+              DTS:DTSID="{78EB80F4-CF20-4E5A-9B32-AD9271E53C18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserBirthDate"
+              DTS:DTSID="{061DFA4A-7483-4788-BA3A-15F7BA06B28B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserGender"
+              DTS:DTSID="{38E8C4D2-CF77-453F-8561-933C95E692F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserName"
+              DTS:DTSID="{4FDD3A33-9174-41F5-917C-BEB686438B33}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[THNDEV05.CoffeeShop_DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{29681C0C-E0FC-46A5-9792-2D6BC6DABB18}"
+      DTS:ObjectName="THNDEV05.CoffeeShop_DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=THNDEV05;Initial Catalog=CoffeeShop_DWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{29681C0C-E0FC-46A5-9792-2D6BC6DABB18}THNDEV05.CoffeeShop_DWH;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow for Dim Tables"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{1EFB2139-F8EE-4401-8036-B69ED3296731}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow for Dim Tables">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Data Flow for Dim Tables\Data Flow Dim_Product"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7B07014F-E6A0-49F2-B41E-3EE326C79E35}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Dim_Product"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{F531EE20-6344-49B1-8A0B-3E90D63E7AB8}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Dim_Store"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Inputs[Data Conversion Input].Columns[StoreLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="StoreLocation"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Sort.Outputs[Sort Output].Columns[StoreLocation]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of StoreLocation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="255"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of StoreLocation]"
+                          name="Copy of StoreLocation"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Data Flow for Dim Tables\Data Flow Dim_Store\Sort.Outputs[Sort Output].Columns[StoreLocation]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">Worksheet$</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[StoreLocation]"
+                          length="255"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]"
+                          name="StoreLocation"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[Date]"
+                          dataType="wstr"
+                          length="255"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[Time]"
+                          dataType="wstr"
+                          length="255"
+                          name="Time" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                          dataType="r8"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderDetail]"
+                          dataType="r8"
+                          name="OrderDetail" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[StoreLocation]"
+                          dataType="wstr"
+                          length="255"
+                          name="StoreLocation" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[Price]"
+                          dataType="r8"
+                          name="Price" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[Quantity]"
+                          dataType="r8"
+                          name="Quantity" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[Category]"
+                          dataType="wstr"
+                          length="255"
+                          name="Category" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[Type]"
+                          dataType="wstr"
+                          length="255"
+                          name="Type" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[Detail]"
+                          dataType="wstr"
+                          length="255"
+                          name="Detail" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[Revenue]"
+                          dataType="r8"
+                          name="Revenue" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[Hour]"
+                          dataType="r8"
+                          name="Hour" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[EmailUser]"
+                          dataType="wstr"
+                          length="255"
+                          name="EmailUser" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[UserBirthDate]"
+                          dataType="wstr"
+                          length="255"
+                          name="UserBirthDate" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[UserGender]"
+                          dataType="wstr"
+                          length="255"
+                          name="UserGender" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].ExternalColumns[UserName]"
+                          dataType="wstr"
+                          length="255"
+                          name="UserName" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Error Output].Columns[StoreLocation]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Error Output].Columns[StoreLocation]"
+                          name="StoreLocation" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Dim_Store]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[THNDEV05.CoffeeShop_DWH]"
+                      connectionManagerRefId="Package.ConnectionManagers[THNDEV05.CoffeeShop_DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of StoreLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Copy of StoreLocation"
+                          externalMetadataColumnId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreLocation]"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of StoreLocation]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreKey]"
+                          dataType="i4"
+                          name="StoreKey" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreLocation]"
+                          dataType="wstr"
+                          length="255"
+                          name="StoreLocation" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Sort"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Sort.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Sort.Inputs[Sort Input].Columns[StoreLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="StoreLocation"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Sort.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Sort.Outputs[Sort Output].Columns[StoreLocation]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Sort.Outputs[Sort Output].Columns[StoreLocation]"
+                          name="StoreLocation"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store.Paths[Data Conversion Output]"
+                  endId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store.Paths[Excel Source Output]"
+                  endId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Sort.Inputs[Sort Input]"
+                  name="Excel Source Output"
+                  startId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source.Outputs[Excel Source Output]" />
+                <path
+                  refId="Package\Data Flow for Dim Tables\Data Flow Dim_Store.Paths[Sort Output]"
+                  endId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Sort Output"
+                  startId="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Sort.Outputs[Sort Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Flow for Dim Tables\Data Flow Task 1"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{B1D81B45-C03B-4B07-88D6-FDDF74298E1A}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task 1"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Flow for Dim Tables\Data Flow Task 2"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{1194D28E-C261-438F-9F2A-4B7594CC6675}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task 2"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Flow for Dim Tables\Data Flow Task 3"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C3C7E314-2995-4492-B075-988FFB9DBEE9}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task 3"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Data Flow for Dim Tables.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{A3B4042A-9516-431F-BFB8-6D0E244A35F8}"
+          DTS:From="Package\Data Flow for Dim Tables\Data Flow Dim_Store"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Data Flow for Dim Tables\Data Flow Dim_Product" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Product"
+          TopLeft="93.5,99.5" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Store"
+          TopLeft="22.5,21.5" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Data Flow for Dim Tables\Data Flow Task 1"
+          TopLeft="463.5,24.5" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Data Flow for Dim Tables\Data Flow Task 2"
+          TopLeft="253.5,25.5" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Data Flow for Dim Tables\Data Flow Task 3"
+          TopLeft="360.5,104.5" />
+        <EdgeLayout
+          Id="Package\Data Flow for Dim Tables.PrecedenceConstraints[Constraint]"
+          TopLeft="114,63.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77,36"
+              Start="0,0"
+              End="77,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
+                  <mssgle:LineSegment
+                    End="73,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73,18"
+                    Point2="77,18"
+                    Point3="77,22" />
+                  <mssgle:LineSegment
+                    End="77,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="670,209"
+          Size="670,252"
+          Id="Package\Data Flow for Dim Tables"
+          TopLeft="121.5,45.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow for Dim Tables\Data Flow Dim_Store">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source"
+          TopLeft="86.5,20.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Data Conversion"
+          TopLeft="523.5,24.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination"
+          TopLeft="512.5,147.5" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Sort"
+          TopLeft="324.5,20.5" />
+        <EdgeLayout
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Store.Paths[Sort Output]"
+          TopLeft="423.5,43.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100,0"
+              Start="0,0"
+              End="92.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="92.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Store.Paths[Excel Source Output]"
+          TopLeft="230.5,41.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94,0"
+              Start="0,0"
+              End="86.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="86.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Store.Paths[Data Conversion Output]"
+          TopLeft="602.5,66.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81"
+              Start="0,0"
+              End="0,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow for Dim Tables\Data Flow Dim_Store\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow for Dim Tables\Data Flow Dim_Store\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
