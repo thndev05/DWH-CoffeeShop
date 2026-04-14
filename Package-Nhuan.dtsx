@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package-Nhuan"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{C7E38880-E213-44AC-8D22-D97FFEAA7407}">
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{811C0DE6-4AF0-4A2E-B0C2-6D9AC069A4A4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3228,6 +3228,1510 @@
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Data Flow for Fact Tables"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{67EC11D4-6058-4A35-B8F8-3E8F6388B309}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow for Fact Tables">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7E1CF3BE-4180-452C-9716-104FD7BE5E46}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Fact_Sales"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Inputs[Derived Column Input].Columns[Date]"
+                          cachedDataType="date"
+                          cachedName="Date"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Date]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Inputs[Derived Column Input].Columns[Hour]"
+                          cachedDataType="r8"
+                          cachedName="Hour"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Hour]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Inputs[Derived Column Input].Columns[EmailUser]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="EmailUser"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[EmailUser]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[ConvertedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[ConvertedDate]"
+                          name="ConvertedDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBTIMESTAMP)#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Date]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBTIMESTAMP)Date</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[HourInt]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[HourInt]"
+                          name="HourInt"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_I4)#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Hour]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_I4)Hour</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[EmailUserStr]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[EmailUserStr]"
+                          name="EmailUserStr"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,100,1252)#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[EmailUser]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,100,1252)EmailUser</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">Transactions$</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Hour]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Hour]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Hour]"
+                          name="Hour"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[StoreLocation]"
+                          length="255"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]"
+                          name="StoreLocation"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Detail]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Detail]"
+                          length="255"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Detail]"
+                          name="Detail"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[EmailUser]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[EmailUser]"
+                          length="255"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[EmailUser]"
+                          name="EmailUser"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[OrderDetail]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderDetail]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[OrderDetail]"
+                          name="OrderDetail"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                          name="Status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Price]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Price]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Price]"
+                          name="Price"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Quantity]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Quantity]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Quantity]"
+                          name="Quantity"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Revenue]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Revenue]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Revenue]"
+                          name="Revenue"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Date]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Date]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Date]"
+                          name="Date"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Date]"
+                          dataType="date"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Time]"
+                          dataType="date"
+                          name="Time" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                          dataType="r8"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderDetail]"
+                          dataType="r8"
+                          name="OrderDetail" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[StoreLocation]"
+                          dataType="wstr"
+                          length="255"
+                          name="StoreLocation" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Price]"
+                          dataType="r8"
+                          name="Price" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Quantity]"
+                          dataType="r8"
+                          name="Quantity" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Category]"
+                          dataType="wstr"
+                          length="255"
+                          name="Category" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Type]"
+                          dataType="wstr"
+                          length="255"
+                          name="Type" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Detail]"
+                          dataType="wstr"
+                          length="255"
+                          name="Detail" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Revenue]"
+                          dataType="r8"
+                          name="Revenue" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[Hour]"
+                          dataType="r8"
+                          name="Hour" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[EmailUser]"
+                          dataType="wstr"
+                          length="255"
+                          name="EmailUser" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[UserBirthDate]"
+                          dataType="date"
+                          name="UserBirthDate" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[UserGender]"
+                          dataType="wstr"
+                          length="255"
+                          name="UserGender" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].ExternalColumns[UserName]"
+                          dataType="wstr"
+                          length="255"
+                          name="UserName" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Hour]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Hour]"
+                          name="Hour" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[StoreLocation]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[StoreLocation]"
+                          name="StoreLocation" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Detail]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Detail]"
+                          name="Detail" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[EmailUser]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[EmailUser]"
+                          name="EmailUser" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[OrderDetail]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[OrderDetail]"
+                          name="OrderDetail" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                          name="Status" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Price]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Price]"
+                          name="Price" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Quantity]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Quantity]"
+                          name="Quantity" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Revenue]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Revenue]"
+                          name="Revenue" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Date]"
+                          dataType="date"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Error Output].Columns[Date]"
+                          name="Date" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup DateKey"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DateKey, CAST(FullDate AS DATETIME) AS FullDate
+FROM dbo.Dim_Date</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT DateKey, CAST(FullDate AS DATETIME) AS FullDate
+FROM dbo.Dim_Date) [refTable]
+where [refTable].[FullDate] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[ConvertedDate]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Inputs[Lookup Input].Columns[ConvertedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ConvertedDate"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[ConvertedDate]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">FullDate</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup Match Output].Columns[DateKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup Match Output].Columns[DateKey]"
+                          name="DateKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">DateKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup ProductKey"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_Product]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_Product]) [refTable]
+where [refTable].[Detail] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ProductKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Category" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Type" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Detail" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Detail]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Inputs[Lookup Input].Columns[Detail]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Detail"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Detail]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Detail</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup Match Output].Columns[ProductKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup Match Output].Columns[ProductKey]"
+                          name="ProductKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">ProductKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup StoreKey"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_Store]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_Store]) [refTable]
+where [refTable].[StoreLocation] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StoreKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StoreLocation" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Inputs[Lookup Input].Columns[StoreLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="StoreLocation"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">StoreLocation</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup Match Output].Columns[StoreKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup Match Output].Columns[StoreKey]"
+                          name="StoreKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">StoreKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup TimeKey"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_Time]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_Time]) [refTable]
+where [refTable].[Hour] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TimeKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Hour" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullTime" dataType="DT_WSTR" length="16" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[HourInt]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Inputs[Lookup Input].Columns[HourInt]"
+                          cachedDataType="i4"
+                          cachedName="HourInt"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[HourInt]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Hour</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup Match Output].Columns[TimeKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup Match Output].Columns[TimeKey]"
+                          name="TimeKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">TimeKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup UserKey"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_User]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_User]) [refTable]
+where [refTable].[EmailUser] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="UserKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmailUser" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="UserName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UserGender" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UserBirthDate" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[EmailUserStr]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Inputs[Lookup Input].Columns[EmailUserStr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="EmailUserStr"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[EmailUserStr]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">EmailUser</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup Match Output].Columns[UserKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup Match Output].Columns[UserKey]"
+                          name="UserKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">UserKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination 1"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Fact_Sales]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FEEKNDG\SQL2025.CoffeeShop_DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[OrderDetail]"
+                          cachedDataType="r8"
+                          cachedName="OrderDetail"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[OrderDetail]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[OrderDetail]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Status]"
+                          cachedDataType="r8"
+                          cachedName="Status"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Status]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Price]"
+                          cachedDataType="r8"
+                          cachedName="Price"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Price]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                          cachedDataType="r8"
+                          cachedName="Quantity"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Quantity]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Revenue]"
+                          cachedDataType="r8"
+                          cachedName="Revenue"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Revenue]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Revenue]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[DateKey]"
+                          cachedDataType="i4"
+                          cachedName="DateKey"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup Match Output].Columns[DateKey]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[TimeKey]"
+                          cachedDataType="i4"
+                          cachedName="TimeKey"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[TimeKey]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup Match Output].Columns[TimeKey]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[StoreKey]"
+                          cachedDataType="i4"
+                          cachedName="StoreKey"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StoreKey]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup Match Output].Columns[StoreKey]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ProductKey]"
+                          cachedDataType="i4"
+                          cachedName="ProductKey"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup Match Output].Columns[ProductKey]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[UserKey]"
+                          cachedDataType="i4"
+                          cachedName="UserKey"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UserKey]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup Match Output].Columns[UserKey]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SalesKey]"
+                          dataType="i8"
+                          name="SalesKey" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                          dataType="i4"
+                          name="DateKey" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[TimeKey]"
+                          dataType="i4"
+                          name="TimeKey" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StoreKey]"
+                          dataType="i4"
+                          name="StoreKey" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                          dataType="i4"
+                          name="ProductKey" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UserKey]"
+                          dataType="i4"
+                          name="UserKey" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[OrderDetail]"
+                          dataType="i4"
+                          name="OrderDetail" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          dataType="i4"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                          dataType="numeric"
+                          name="Price"
+                          precision="18"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                          dataType="i4"
+                          name="Quantity" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Revenue]"
+                          dataType="numeric"
+                          name="Revenue"
+                          precision="18"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Derived Column Output]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Excel Source Output]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Inputs[Derived Column Input]"
+                  name="Excel Source Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output1]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output2]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output3]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output4]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup Match Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
@@ -3266,6 +4770,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Data Flow for Dim Tables" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{E18C4E16-76AB-4F48-8BC0-C67C62248744}"
+      DTS:From="Package\Data Flow for Dim Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Data Flow for Fact Tables" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3475,6 +4987,51 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales"
+          TopLeft="14.0714285714286,11.2142857142858" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205,108"
+          Size="228,151"
+          Id="Package\Data Flow for Fact Tables"
+          TopLeft="541.214285714286,455.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="674.78124065185,411.885963747844">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.5669549375642,43.614036252156"
+              Start="0,0"
+              End="-19.5669549375642,36.114036252156">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.807018126078" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.807018126078"
+                    Point2="0,21.807018126078"
+                    Point3="-4,21.807018126078" />
+                  <mssgle:LineSegment
+                    End="-15.5669549375642,21.807018126078" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.5669549375642,21.807018126078"
+                    Point2="-19.5669549375642,21.807018126078"
+                    Point3="-19.5669549375642,25.807018126078" />
+                  <mssgle:LineSegment
+                    End="-19.5669549375642,36.114036252156" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3482,7 +5039,15 @@
     design-time-name="Package\Data Flow for Dim Tables\Data Flow Dim_Date">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Date\OLE DB Destination"
+          TopLeft="395.5,89.5" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Date\Derived Column"
+          TopLeft="174.5,197.5" />
         <NodeLayout
           Size="99,42"
           Id="Package\Data Flow for Dim Tables\Data Flow Dim_Date\Sort"
@@ -3491,14 +5056,42 @@
           Size="144,42"
           Id="Package\Data Flow for Dim Tables\Data Flow Dim_Date\Excel Source"
           TopLeft="35.5,35.5" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Date\Derived Column"
-          TopLeft="174.5,197.5" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Date\OLE DB Destination"
-          TopLeft="395.5,89.5" />
+        <EdgeLayout
+          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Date.Paths[Sort Output]"
+          TopLeft="249,134.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.5,63"
+              Start="0,0"
+              End="-20.5,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.4210526315789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.4210526315789"
+                    Point2="0,37.4210526315789"
+                    Point3="-4,37.4210526315789" />
+                  <mssgle:LineSegment
+                    End="-16.5,37.4210526315789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.5,37.4210526315789"
+                    Point2="-20.5,37.4210526315789"
+                    Point3="-20.5,41.4210526315789" />
+                  <mssgle:LineSegment
+                    End="-20.5,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.81447265625,42.4210526315789,41.1289453125,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow for Dim Tables\Data Flow Dim_Date.Paths[Excel Source Output]"
           TopLeft="179.5,56.5">
@@ -3524,7 +5117,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="41.6162890625,-17.228515625,55.767421875,11.228515625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3558,48 +5153,16 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow for Dim Tables\Data Flow Dim_Date.Paths[Sort Output]"
-          TopLeft="249,134.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20.5,63"
-              Start="0,0"
-              End="-20.5,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.4210526315789" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.4210526315789"
-                    Point2="0,37.4210526315789"
-                    Point3="-4,37.4210526315789" />
-                  <mssgle:LineSegment
-                    End="-16.5,37.4210526315789" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.5,37.4210526315789"
-                    Point2="-20.5,37.4210526315789"
-                    Point3="-20.5,41.4210526315789" />
-                  <mssgle:LineSegment
-                    End="-20.5,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="82.18552734375,-21.796992481203,41.1289453125,9.5732421875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow for Dim Tables\Data Flow Dim_Date\Excel Source">
+    design-time-name="Package\Data Flow for Dim Tables\Data Flow Dim_Date\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3612,7 +5175,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow for Dim Tables\Data Flow Dim_Date\OLE DB Destination">
+    design-time-name="Package\Data Flow for Dim Tables\Data Flow Dim_Date\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4229,6 +5792,421 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow for Dim Tables\Data Flow Dim_User\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column"
+          TopLeft="201.5,17.5" />
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Excel Source Output]"
+          TopLeft="149.5,26.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52,12"
+              Start="0,0"
+              End="44.5,12">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="22,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22,0"
+                    Point2="26,0"
+                    Point3="26,4" />
+                  <mssgle:LineSegment
+                    End="26,8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26,8"
+                    Point2="26,12"
+                    Point3="30,12" />
+                  <mssgle:LineSegment
+                    End="44.5,12" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-1.88371093750001,-17.228515625,55.767421875,11.228515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey"
+          TopLeft="391.5,8.5" />
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Derived Column Output]"
+          TopLeft="359.5,38.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32,-9"
+              Start="0,0"
+              End="24.5,-9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="12,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12,0"
+                    Point2="16,0"
+                    Point3="16,-4" />
+                  <mssgle:LineSegment
+                    End="16,-5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16,-5"
+                    Point2="16,-9"
+                    Point3="20,-9" />
+                  <mssgle:LineSegment
+                    End="24.5,-9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-11.8837109375,1,55.767421875,11.228515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey"
+          TopLeft="380.5,119.5" />
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output]"
+          TopLeft="471.5,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,69"
+              Start="0,0"
+              End="-10.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="-4,34.5" />
+                  <mssgle:LineSegment
+                    End="-6.5,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,34.5"
+                    Point2="-10.5,34.5"
+                    Point3="-10.5,38.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-85.76173828125,39.5,161.0234765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey"
+          TopLeft="65.5,65.5" />
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output1]"
+          TopLeft="380.5,140.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-152,-54"
+              Start="0,0"
+              End="-144.5,-54">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-72,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-72,0"
+                    Point2="-76,0"
+                    Point3="-76,-4" />
+                  <mssgle:LineSegment
+                    End="-76,-50" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-76,-50"
+                    Point2="-76,-54"
+                    Point3="-80,-54" />
+                  <mssgle:LineSegment
+                    End="-144.5,-54" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-156.51173828125,1,161.0234765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey"
+          TopLeft="64.5,143.5" />
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output2]"
+          TopLeft="149.5,107.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-80.51173828125,8.4453125,161.0234765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey"
+          TopLeft="258.5,179.888888888889" />
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output3]"
+          TopLeft="239.5,157.388888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99,22.5"
+              Start="0,0"
+              End="99,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="95,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95,0"
+                    Point2="99,0"
+                    Point3="99,4" />
+                  <mssgle:LineSegment
+                    End="99,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.48826171875,-17.609375,161.0234765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1"
+          TopLeft="459.5,190.5" />
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output4]"
+          TopLeft="418.5,200.888888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41,10.6111111111111"
+              Start="0,0"
+              End="33.5,10.6111111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="16.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.5,0"
+                    Point2="20.5,0"
+                    Point3="20.5,4" />
+                  <mssgle:LineSegment
+                    End="20.5,6.61111111111111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.5,6.61111111111111"
+                    Point2="20.5,10.6111111111111"
+                    Point3="24.5,10.6111111111111" />
+                  <mssgle:LineSegment
+                    End="33.5,10.6111111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-60.01173828125,-17.609375,161.0234765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Time]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Store]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Product]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_User]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
