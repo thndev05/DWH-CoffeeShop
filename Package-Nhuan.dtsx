@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package-Nhuan"
   DTS:PackageType="5"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{811C0DE6-4AF0-4A2E-B0C2-6D9AC069A4A4}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{6FCE7739-D4DB-44D2-BD31-2B011A48ED03}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5039,7 +5039,7 @@ where [refTable].[EmailUser] = ?</property>
     design-time-name="Package\Data Flow for Dim Tables\Data Flow Dim_Date">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="177,42"
           Id="Package\Data Flow for Dim Tables\Data Flow Dim_Date\OLE DB Destination"
@@ -5087,9 +5087,7 @@ where [refTable].[EmailUser] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.81447265625,42.4210526315789,41.1289453125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5117,9 +5115,7 @@ where [refTable].[EmailUser] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="41.6162890625,-17.228515625,55.767421875,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5153,9 +5149,7 @@ where [refTable].[EmailUser] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="82.18552734375,-21.796992481203,41.1289453125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5811,266 +5805,238 @@ where [refTable].[EmailUser] = ?</property>
         <NodeLayout
           Size="144,42"
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source"
-          TopLeft="5.5,5.5" />
+          TopLeft="15.5,5.5" />
         <NodeLayout
           Size="158,42"
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column"
-          TopLeft="201.5,17.5" />
+          TopLeft="187.5,5.5" />
         <EdgeLayout
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Excel Source Output]"
-          TopLeft="149.5,26.5">
+          TopLeft="159.5,26.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="52,12"
+              EndConnector="28,0"
               Start="0,0"
-              End="44.5,12">
+              End="20.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="22,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22,0"
-                    Point2="26,0"
-                    Point3="26,4" />
-                  <mssgle:LineSegment
-                    End="26,8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26,8"
-                    Point2="26,12"
-                    Point3="30,12" />
-                  <mssgle:LineSegment
-                    End="44.5,12" />
+                    End="20.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-1.88371093750001,-17.228515625,55.767421875,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="160,42"
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey"
-          TopLeft="391.5,8.5" />
+          TopLeft="401.5,8.5" />
         <EdgeLayout
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Derived Column Output]"
-          TopLeft="359.5,38.5">
+          TopLeft="345.5,28">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32,-9"
+              EndConnector="56,0"
               Start="0,0"
-              End="24.5,-9">
+              End="48.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="12,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12,0"
-                    Point2="16,0"
-                    Point3="16,-4" />
-                  <mssgle:LineSegment
-                    End="16,-5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16,-5"
-                    Point2="16,-9"
-                    Point3="20,-9" />
-                  <mssgle:LineSegment
-                    End="24.5,-9" />
+                    End="48.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.8837109375,1,55.767421875,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="161,42"
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey"
-          TopLeft="380.5,119.5" />
+          TopLeft="424.5,83.5" />
         <EdgeLayout
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output]"
-          TopLeft="471.5,50.5">
+          TopLeft="481.5,50.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.5,69"
+              EndConnector="23.5,33"
               Start="0,0"
-              End="-10.5,61.5">
+              End="23.5,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,12.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.5"
-                    Point2="0,34.5"
-                    Point3="-4,34.5" />
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="4,16.5" />
                   <mssgle:LineSegment
-                    End="-6.5,34.5" />
+                    End="19.5,16.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-6.5,34.5"
-                    Point2="-10.5,34.5"
-                    Point3="-10.5,38.5" />
+                    Point1="19.5,16.5"
+                    Point2="23.5,16.5"
+                    Point3="23.5,20.5" />
                   <mssgle:LineSegment
-                    End="-10.5,61.5" />
+                    End="23.5,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-85.76173828125,39.5,161.0234765625,11.609375"
+              BoundingBox="-36.44138671875,21.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="163,42"
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey"
-          TopLeft="65.5,65.5" />
+          TopLeft="188.5,71.5" />
         <EdgeLayout
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output1]"
-          TopLeft="380.5,140.5">
+          TopLeft="424.5,104.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-152,-54"
+              EndConnector="-73,-12"
               Start="0,0"
-              End="-144.5,-54">
+              End="-65.5,-12">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-72,0" />
+                    End="-32.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-72,0"
-                    Point2="-76,0"
-                    Point3="-76,-4" />
+                    Point1="-32.5,0"
+                    Point2="-36.5,0"
+                    Point3="-36.5,-4" />
                   <mssgle:LineSegment
-                    End="-76,-50" />
+                    End="-36.5,-8" />
                   <mssgle:CubicBezierSegment
-                    Point1="-76,-50"
-                    Point2="-76,-54"
-                    Point3="-80,-54" />
+                    Point1="-36.5,-8"
+                    Point2="-36.5,-12"
+                    Point3="-40.5,-12" />
                   <mssgle:LineSegment
-                    End="-144.5,-54" />
+                    End="-65.5,-12" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-156.51173828125,1,161.0234765625,11.609375"
+              BoundingBox="-84.69138671875,1,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="175,42"
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey"
-          TopLeft="64.5,143.5" />
+          TopLeft="44.5,132.5" />
         <EdgeLayout
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output2]"
-          TopLeft="149.5,107.5">
+          TopLeft="188.5,92.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36"
+              EndConnector="-56.5,40"
               Start="0,0"
-              End="0,28.5">
+              End="-56.5,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="-52.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-52.5,0"
+                    Point2="-56.5,0"
+                    Point3="-56.5,4" />
+                  <mssgle:LineSegment
+                    End="-56.5,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-80.51173828125,8.4453125,161.0234765625,11.609375"
+              BoundingBox="-104.69138671875,-17.609375,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="160,42"
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey"
-          TopLeft="258.5,179.888888888889" />
+          TopLeft="266.5,147.888888888889" />
         <EdgeLayout
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output3]"
-          TopLeft="239.5,157.388888888889">
+          TopLeft="219.5,153.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="99,22.5"
+              EndConnector="47,15.3888888888889"
               Start="0,0"
-              End="99,15">
+              End="39.5,15.3888888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="95,0" />
+                    End="19.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="95,0"
-                    Point2="99,0"
-                    Point3="99,4" />
+                    Point1="19.5,0"
+                    Point2="23.5,0"
+                    Point3="23.5,4" />
                   <mssgle:LineSegment
-                    End="99,15" />
+                    End="23.5,11.3888888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.5,11.3888888888889"
+                    Point2="23.5,15.3888888888889"
+                    Point3="27.5,15.3888888888889" />
+                  <mssgle:LineSegment
+                    End="39.5,15.3888888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="18.48826171875,-17.609375,161.0234765625,11.609375"
+              BoundingBox="-24.69138671875,-17.609375,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="186,42"
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1"
-          TopLeft="459.5,190.5" />
+          TopLeft="482.5,143.5" />
         <EdgeLayout
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output4]"
-          TopLeft="418.5,200.888888888889">
+          TopLeft="426.5,166.694444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41,10.6111111111111"
+              EndConnector="56,0"
               Start="0,0"
-              End="33.5,10.6111111111111">
+              End="48.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="16.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.5,0"
-                    Point2="20.5,0"
-                    Point3="20.5,4" />
-                  <mssgle:LineSegment
-                    End="20.5,6.61111111111111" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20.5,6.61111111111111"
-                    Point2="20.5,10.6111111111111"
-                    Point3="24.5,10.6111111111111" />
-                  <mssgle:LineSegment
-                    End="33.5,10.6111111111111" />
+                    End="48.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-60.01173828125,-17.609375,161.0234765625,11.609375"
+              BoundingBox="-23.94138671875,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
