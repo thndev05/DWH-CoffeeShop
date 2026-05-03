@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package-Nhuan"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{6FCE7739-D4DB-44D2-BD31-2B011A48ED03}">
+  DTS:VersionBuild="87"
+  DTS:VersionGUID="{D8866701-1F0C-482D-A201-26F8C552DDD1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,136 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\DOCUMENT\Data Warehouse\DWH-CoffeeShop\Coffee Shop Sales.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=G:\DOCUMENT\Data Warehouse\DWH-CoffeeShop\Coffee Shop Sales.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat file for Error Look Up]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A6B24923-3431-4EAE-9DA2-65AC2F4DDBBB}"
+      DTS:ObjectName="Flat file for Error Look Up">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="G:\DOCUMENT\Data Warehouse\DWH-CoffeeShop\error_lookup_at_fact_sales.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hour"
+              DTS:DTSID="{F8C06682-4F27-49CE-9990-E2B73503E7B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StoreLocation"
+              DTS:DTSID="{B2EBA97B-5D8D-41BF-B26B-03D03D051FEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Detail"
+              DTS:DTSID="{259135D7-62A3-4A69-A39A-3DEFD948A7BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailUser"
+              DTS:DTSID="{13334651-53CB-4B10-A5BE-6CC319F3200C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderDetail"
+              DTS:DTSID="{6BD0FD72-53C0-418E-BA42-EF4A40DE8E3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Status"
+              DTS:DTSID="{493DBC48-A789-4999-8FEE-C8F1B34BB87D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{CB3FAFFD-82CD-40C7-8AC4-6A42C4A6A385}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{B30EC69E-AED3-47B3-9B28-BDC0C1769542}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Revenue"
+              DTS:DTSID="{C4B97B44-EDCE-44A9-88D6-FDEB8872F16A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{CE17C53D-438A-49C6-B9B5-CB65ED1E716A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConvertedDate"
+              DTS:DTSID="{F4118D6B-599E-4E70-BA5A-3348D705D43E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HourInt"
+              DTS:DTSID="{4B84D5A4-ECA0-43D4-A818-B590D29AAF4F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailUserStr"
+              DTS:DTSID="{B61EA9CD-CD3E-409A-92E4-87EEE102D155}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3686,6 +3815,189 @@
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="1033"
+                  name="Flat File Destination"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat file for Error Look Up]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat file for Error Look Up]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[Hour]"
+                          cachedDataType="r8"
+                          cachedName="Hour"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Hour]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Hour]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[StoreLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="StoreLocation"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[StoreLocation]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[StoreLocation]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[Detail]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Detail"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Detail]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Detail]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[EmailUser]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="EmailUser"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[EmailUser]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUser]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[OrderDetail]"
+                          cachedDataType="r8"
+                          cachedName="OrderDetail"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[OrderDetail]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[OrderDetail]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[Status]"
+                          cachedDataType="r8"
+                          cachedName="Status"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Status]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Status]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[Price]"
+                          cachedDataType="r8"
+                          cachedName="Price"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Price]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Price]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[Quantity]"
+                          cachedDataType="r8"
+                          cachedName="Quantity"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Quantity]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Quantity]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[Revenue]"
+                          cachedDataType="r8"
+                          cachedName="Revenue"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Revenue]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Revenue]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[Date]"
+                          cachedDataType="date"
+                          cachedName="Date"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Date]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Date]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[ConvertedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ConvertedDate"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ConvertedDate]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[ConvertedDate]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[HourInt]"
+                          cachedDataType="i4"
+                          cachedName="HourInt"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[HourInt]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[HourInt]" />
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].Columns[EmailUserStr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="EmailUserStr"
+                          externalMetadataColumnId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[EmailUserStr]"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUserStr]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Hour]"
+                          dataType="r8"
+                          name="Hour" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[StoreLocation]"
+                          dataType="wstr"
+                          length="255"
+                          name="StoreLocation" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Detail]"
+                          dataType="wstr"
+                          length="255"
+                          name="Detail" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[EmailUser]"
+                          dataType="wstr"
+                          length="255"
+                          name="EmailUser" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[OrderDetail]"
+                          dataType="r8"
+                          name="OrderDetail" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Status]"
+                          dataType="r8"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Price]"
+                          dataType="r8"
+                          name="Price" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Quantity]"
+                          dataType="r8"
+                          name="Quantity" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Revenue]"
+                          dataType="r8"
+                          name="Revenue" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Date]"
+                          dataType="date"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ConvertedDate]"
+                          dataType="dbTimeStamp"
+                          name="ConvertedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[HourInt]"
+                          dataType="i4"
+                          name="HourInt" />
+                        <externalMetadataColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[EmailUserStr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="EmailUserStr" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
                   refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -3723,7 +4035,7 @@ where [refTable].[FullDate] = ?</property>
                       dataType="System.Int32"
                       description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                       name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">0</property>
+                      typeConverter="LookupNoMatchBehavior">1</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -3791,7 +4103,6 @@ where [refTable].[FullDate] = ?</property>
                     <output
                       refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
-                      errorRowDisposition="FailComponent"
                       exclusionGroup="1"
                       name="Lookup Match Output"
                       synchronousInputId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Inputs[Lookup Input]">
@@ -4688,6 +4999,1011 @@ where [refTable].[EmailUser] = ?</property>
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[Hour]"
+                          cachedDataType="r8"
+                          cachedName="Hour"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Hour]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Hour]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[StoreLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="StoreLocation"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[StoreLocation]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[Detail]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Detail"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Detail]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Detail]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[EmailUser]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="EmailUser"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[EmailUser]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUser]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[OrderDetail]"
+                          cachedDataType="r8"
+                          cachedName="OrderDetail"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[OrderDetail]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[OrderDetail]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[Status]"
+                          cachedDataType="r8"
+                          cachedName="Status"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Status]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Status]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[Price]"
+                          cachedDataType="r8"
+                          cachedName="Price"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Price]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Price]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[Quantity]"
+                          cachedDataType="r8"
+                          cachedName="Quantity"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Quantity]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Quantity]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[Revenue]"
+                          cachedDataType="r8"
+                          cachedName="Revenue"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Revenue]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Revenue]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[Date]"
+                          cachedDataType="date"
+                          cachedName="Date"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Date]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Date]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[ConvertedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ConvertedDate"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[ConvertedDate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[ConvertedDate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[HourInt]"
+                          cachedDataType="i4"
+                          cachedName="HourInt"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[HourInt]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[HourInt]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1].Columns[EmailUserStr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="EmailUserStr"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[EmailUserStr]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUserStr]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[Hour]"
+                          cachedDataType="r8"
+                          cachedName="Hour"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Hour]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Hour]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[StoreLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="StoreLocation"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[StoreLocation]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[Detail]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Detail"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Detail]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Detail]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[EmailUser]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="EmailUser"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[EmailUser]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUser]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[OrderDetail]"
+                          cachedDataType="r8"
+                          cachedName="OrderDetail"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[OrderDetail]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[OrderDetail]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[Status]"
+                          cachedDataType="r8"
+                          cachedName="Status"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Status]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Status]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[Price]"
+                          cachedDataType="r8"
+                          cachedName="Price"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Price]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Price]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[Quantity]"
+                          cachedDataType="r8"
+                          cachedName="Quantity"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Quantity]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Quantity]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[Revenue]"
+                          cachedDataType="r8"
+                          cachedName="Revenue"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Revenue]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Revenue]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[Date]"
+                          cachedDataType="date"
+                          cachedName="Date"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Date]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Date]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[ConvertedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ConvertedDate"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[ConvertedDate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[ConvertedDate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[HourInt]"
+                          cachedDataType="i4"
+                          cachedName="HourInt"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[HourInt]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[HourInt]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2].Columns[EmailUserStr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="EmailUserStr"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[EmailUserStr]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUserStr]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3]"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[Hour]"
+                          cachedDataType="r8"
+                          cachedName="Hour"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Hour]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Hour]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[StoreLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="StoreLocation"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[StoreLocation]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[Detail]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Detail"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Detail]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Detail]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[EmailUser]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="EmailUser"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[EmailUser]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUser]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[OrderDetail]"
+                          cachedDataType="r8"
+                          cachedName="OrderDetail"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[OrderDetail]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[OrderDetail]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[Status]"
+                          cachedDataType="r8"
+                          cachedName="Status"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Status]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Status]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[Price]"
+                          cachedDataType="r8"
+                          cachedName="Price"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Price]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Price]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[Quantity]"
+                          cachedDataType="r8"
+                          cachedName="Quantity"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Quantity]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Quantity]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[Revenue]"
+                          cachedDataType="r8"
+                          cachedName="Revenue"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Revenue]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Revenue]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[Date]"
+                          cachedDataType="date"
+                          cachedName="Date"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Date]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Date]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[ConvertedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ConvertedDate"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[ConvertedDate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[ConvertedDate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[HourInt]"
+                          cachedDataType="i4"
+                          cachedName="HourInt"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[HourInt]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[HourInt]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3].Columns[EmailUserStr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="EmailUserStr"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[EmailUserStr]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUserStr]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4]"
+                      hasSideEffects="true"
+                      name="Union All Input 4">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[Hour]"
+                          cachedDataType="r8"
+                          cachedName="Hour"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Hour]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Hour]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[StoreLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="StoreLocation"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[StoreLocation]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[Detail]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Detail"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Detail]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Detail]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[EmailUser]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="EmailUser"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[EmailUser]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUser]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[OrderDetail]"
+                          cachedDataType="r8"
+                          cachedName="OrderDetail"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[OrderDetail]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[OrderDetail]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[Status]"
+                          cachedDataType="r8"
+                          cachedName="Status"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Status]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Status]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[Price]"
+                          cachedDataType="r8"
+                          cachedName="Price"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Price]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Price]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[Quantity]"
+                          cachedDataType="r8"
+                          cachedName="Quantity"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Quantity]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Quantity]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[Revenue]"
+                          cachedDataType="r8"
+                          cachedName="Revenue"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Revenue]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Revenue]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[Date]"
+                          cachedDataType="date"
+                          cachedName="Date"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Date]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Date]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[ConvertedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ConvertedDate"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[ConvertedDate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[ConvertedDate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[HourInt]"
+                          cachedDataType="i4"
+                          cachedName="HourInt"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[HourInt]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[HourInt]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4].Columns[EmailUserStr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="EmailUserStr"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[EmailUserStr]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUserStr]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5]"
+                      hasSideEffects="true"
+                      name="Union All Input 5">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[Hour]"
+                          cachedDataType="r8"
+                          cachedName="Hour"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Hour]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Hour]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[StoreLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="StoreLocation"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[StoreLocation]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[StoreLocation]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[Detail]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Detail"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Detail]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Detail]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[EmailUser]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="EmailUser"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[EmailUser]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUser]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[OrderDetail]"
+                          cachedDataType="r8"
+                          cachedName="OrderDetail"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[OrderDetail]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[OrderDetail]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[Status]"
+                          cachedDataType="r8"
+                          cachedName="Status"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Status]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Status]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[Price]"
+                          cachedDataType="r8"
+                          cachedName="Price"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Price]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Price]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[Quantity]"
+                          cachedDataType="r8"
+                          cachedName="Quantity"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Quantity]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Quantity]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[Revenue]"
+                          cachedDataType="r8"
+                          cachedName="Revenue"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Revenue]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Revenue]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[Date]"
+                          cachedDataType="date"
+                          cachedName="Date"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source.Outputs[Excel Source Output].Columns[Date]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Date]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[ConvertedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ConvertedDate"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[ConvertedDate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[ConvertedDate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[HourInt]"
+                          cachedDataType="i4"
+                          cachedName="HourInt"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[HourInt]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[HourInt]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5].Columns[EmailUserStr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="EmailUserStr"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column.Outputs[Derived Column Output].Columns[EmailUserStr]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUserStr]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 6]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 6">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Hour]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Hour]"
+                          name="Hour" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[StoreLocation]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[StoreLocation]"
+                          name="StoreLocation" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Detail]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Detail]"
+                          name="Detail" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUser]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUser]"
+                          name="EmailUser" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[OrderDetail]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[OrderDetail]"
+                          name="OrderDetail" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Status]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Status]"
+                          name="Status" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Price]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Price]"
+                          name="Price" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Quantity]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Quantity]"
+                          name="Quantity" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Revenue]"
+                          dataType="r8"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Revenue]"
+                          name="Revenue" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Date]"
+                          dataType="date"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[Date]"
+                          name="Date" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[ConvertedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[ConvertedDate]"
+                          name="ConvertedDate" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[HourInt]"
+                          dataType="i4"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[HourInt]"
+                          name="HourInt" />
+                        <outputColumn
+                          refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUserStr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1].Columns[EmailUserStr]"
+                          name="EmailUserStr" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
@@ -4725,6 +6041,36 @@ where [refTable].[EmailUser] = ?</property>
                   endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
                   name="Lookup Match Output"
                   startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup No Match Output]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 1]"
+                  name="Lookup No Match Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup No Match Output1]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 2]"
+                  name="Lookup No Match Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup No Match Output2]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 3]"
+                  name="Lookup No Match Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup No Match Output3]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 4]"
+                  name="Lookup No Match Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup No Match Output4]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Inputs[Union All Input 5]"
+                  name="Lookup No Match Output"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Union All Output 1]"
+                  endId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination.Inputs[Flat File Destination Input]"
+                  name="Union All Output 1"
+                  startId="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All.Outputs[Union All Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -4943,6 +6289,17 @@ where [refTable].[EmailUser] = ?</property>
           Id="Package\Data Flow for Dim Tables"
           TopLeft="339.78124065185,159.885963747844" />
         <NodeLayout
+          Size="186,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales"
+          TopLeft="14.0714285714286,11.2142857142858" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="228,108"
+          Size="228,151"
+          Id="Package\Data Flow for Fact Tables"
+          TopLeft="541.214285714286,455.5" />
+        <NodeLayout
           Size="179,43"
           Id="Package\Sequence Container\Clean_Staging_Data"
           TopLeft="27.1666633139055,41.9912271937175" />
@@ -4987,17 +6344,6 @@ where [refTable].[EmailUser] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales"
-          TopLeft="14.0714285714286,11.2142857142858" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="205,108"
-          Size="228,151"
-          Id="Package\Data Flow for Fact Tables"
-          TopLeft="541.214285714286,455.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="674.78124065185,411.885963747844">
@@ -5039,7 +6385,7 @@ where [refTable].[EmailUser] = ?</property>
     design-time-name="Package\Data Flow for Dim Tables\Data Flow Dim_Date">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\Data Flow for Dim Tables\Data Flow Dim_Date\OLE DB Destination"
@@ -5087,7 +6433,9 @@ where [refTable].[EmailUser] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5115,7 +6463,9 @@ where [refTable].[EmailUser] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5149,7 +6499,9 @@ where [refTable].[EmailUser] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5384,7 +6736,7 @@ where [refTable].[EmailUser] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="30.8305859375,5,30.838828125,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5408,7 +6760,7 @@ where [refTable].[EmailUser] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="27.8778832653985,5,55.767421875,11.228515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5432,7 +6784,7 @@ where [refTable].[EmailUser] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-15.4194140625,31.96337890625,30.838828125,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5801,29 +7153,73 @@ where [refTable].[EmailUser] = ?</property>
     design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey"
+          TopLeft="44.5,208.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey"
+          TopLeft="424.5,159.5" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1"
+          TopLeft="482.5,219.5" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey"
+          TopLeft="401.5,84.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey"
+          TopLeft="188.5,147.5" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey"
+          TopLeft="266.5,223.888888888889" />
         <NodeLayout
           Size="144,42"
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source"
-          TopLeft="15.5,5.5" />
+          TopLeft="15.5,81.5" />
         <NodeLayout
           Size="158,42"
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Derived Column"
-          TopLeft="187.5,5.5" />
+          TopLeft="187.5,81.5" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Flat File Destination"
+          TopLeft="753.5,81.5" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Union All"
+          TopLeft="613.5,77.5" />
         <EdgeLayout
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Excel Source Output]"
-          TopLeft="159.5,26.5">
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Union All Output 1]"
+          TopLeft="675,77.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="28,0"
+              EndConnector="166.5,4"
               Start="0,0"
-              End="20.5,0">
+              End="166.5,-3.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="20.5,0" />
+                    End="0,-18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="4,-22.5" />
+                  <mssgle:LineSegment
+                    End="162.5,-22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="162.5,-22.5"
+                    Point2="166.5,-22.5"
+                    Point3="166.5,-18.5" />
+                  <mssgle:LineSegment
+                    End="166.5,-3.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5832,13 +7228,177 @@ where [refTable].[EmailUser] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup DateKey"
-          TopLeft="401.5,8.5" />
         <EdgeLayout
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Derived Column Output]"
-          TopLeft="345.5,28">
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup No Match Output4]"
+          TopLeft="346.5,223.888888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="340,-104.388888888889"
+              Start="0,0"
+              End="340,-96.888888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-53.5777279521675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-53.5777279521675"
+                    Point2="0,-57.5777279521675"
+                    Point3="4,-57.5777279521675" />
+                  <mssgle:LineSegment
+                    End="336,-57.5777279521675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="336,-57.5777279521675"
+                    Point2="340,-57.5777279521675"
+                    Point3="340,-61.5777279521675" />
+                  <mssgle:LineSegment
+                    End="340,-96.888888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="114.19361328125,-52.5777279521675,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup No Match Output3]"
+          TopLeft="159.833333333333,208.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="486.416666666667,-89"
+              Start="0,0"
+              End="486.416666666667,-81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-45.9738719611331" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-45.9738719611331"
+                    Point2="0,-49.9738719611331"
+                    Point3="4,-49.9738719611331" />
+                  <mssgle:LineSegment
+                    End="482.416666666667,-49.9738719611331" />
+                  <mssgle:CubicBezierSegment
+                    Point1="482.416666666667,-49.9738719611331"
+                    Point2="486.416666666667,-49.9738719611331"
+                    Point3="486.416666666667,-53.9738719611331" />
+                  <mssgle:LineSegment
+                    End="486.416666666667,-81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="187.401946614583,-44.9738719611331,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup No Match Output2]"
+          TopLeft="270,147.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="385.833333333333,-28"
+              Start="0,0"
+              End="385.833333333333,-20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-12.5842696629213" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-12.5842696629213"
+                    Point2="0,-16.5842696629213"
+                    Point3="4,-16.5842696629213" />
+                  <mssgle:LineSegment
+                    End="381.833333333333,-16.5842696629213" />
+                  <mssgle:CubicBezierSegment
+                    Point1="381.833333333333,-16.5842696629213"
+                    Point2="385.833333333333,-16.5842696629213"
+                    Point3="385.833333333333,-20.5842696629213" />
+                  <mssgle:LineSegment
+                    End="385.833333333333,-20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="137.110279947917,-11.5842696629213,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup No Match Output1]"
+          TopLeft="530.5,159.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="144.5,-40"
+              Start="0,0"
+              End="144.5,-32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-12.2361623616236" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-12.2361623616236"
+                    Point2="0,-16.2361623616236"
+                    Point3="4,-16.2361623616236" />
+                  <mssgle:LineSegment
+                    End="140.5,-16.2361623616236" />
+                  <mssgle:CubicBezierSegment
+                    Point1="140.5,-16.2361623616236"
+                    Point2="144.5,-16.2361623616236"
+                    Point3="144.5,-20.2361623616236" />
+                  <mssgle:LineSegment
+                    End="144.5,-32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="16.44361328125,-11.2361623616236,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup No Match Output]"
+          TopLeft="561.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52,0"
+              Start="0,0"
+              End="44.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="44.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.55638671875,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output4]"
+          TopLeft="426.5,242.694444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5855,130 +7415,14 @@ where [refTable].[EmailUser] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey"
-          TopLeft="424.5,83.5" />
-        <EdgeLayout
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output]"
-          TopLeft="481.5,50.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="23.5,33"
-              Start="0,0"
-              End="23.5,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.5"
-                    Point2="0,16.5"
-                    Point3="4,16.5" />
-                  <mssgle:LineSegment
-                    End="19.5,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="19.5,16.5"
-                    Point2="23.5,16.5"
-                    Point3="23.5,20.5" />
-                  <mssgle:LineSegment
-                    End="23.5,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-36.44138671875,21.5,96.3827734375,11.609375"
+              BoundingBox="-56.26173828125,5,161.0234765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup StoreKey"
-          TopLeft="188.5,71.5" />
-        <EdgeLayout
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output1]"
-          TopLeft="424.5,104.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-73,-12"
-              Start="0,0"
-              End="-65.5,-12">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-32.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-32.5,0"
-                    Point2="-36.5,0"
-                    Point3="-36.5,-4" />
-                  <mssgle:LineSegment
-                    End="-36.5,-8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-36.5,-8"
-                    Point2="-36.5,-12"
-                    Point3="-40.5,-12" />
-                  <mssgle:LineSegment
-                    End="-65.5,-12" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-84.69138671875,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey"
-          TopLeft="44.5,132.5" />
-        <EdgeLayout
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output2]"
-          TopLeft="188.5,92.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-56.5,40"
-              Start="0,0"
-              End="-56.5,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-52.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-52.5,0"
-                    Point2="-56.5,0"
-                    Point3="-56.5,4" />
-                  <mssgle:LineSegment
-                    End="-56.5,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-104.69138671875,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup UserKey"
-          TopLeft="266.5,147.888888888889" />
         <EdgeLayout
           Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output3]"
-          TopLeft="219.5,153.5">
+          TopLeft="219.5,229.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6008,17 +7452,139 @@ where [refTable].[EmailUser] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-24.69138671875,-17.609375,96.3827734375,11.609375"
+              BoundingBox="-57.01173828125,-17.609375,161.0234765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1"
-          TopLeft="482.5,143.5" />
         <EdgeLayout
-          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output4]"
-          TopLeft="426.5,166.694444444444">
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output2]"
+          TopLeft="188.5,168.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-56.5,40"
+              Start="0,0"
+              End="-56.5,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-52.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-52.5,0"
+                    Point2="-56.5,0"
+                    Point3="-56.5,4" />
+                  <mssgle:LineSegment
+                    End="-56.5,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-137.01173828125,-17.609375,161.0234765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output1]"
+          TopLeft="424.5,180.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73,-12"
+              Start="0,0"
+              End="-65.5,-12">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-32.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.5,0"
+                    Point2="-36.5,0"
+                    Point3="-36.5,-4" />
+                  <mssgle:LineSegment
+                    End="-36.5,-8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36.5,-8"
+                    Point2="-36.5,-12"
+                    Point3="-40.5,-12" />
+                  <mssgle:LineSegment
+                    End="-65.5,-12" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-117.01173828125,1,161.0234765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Lookup Match Output]"
+          TopLeft="481.5,126.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.5,33"
+              Start="0,0"
+              End="23.5,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="4,16.5" />
+                  <mssgle:LineSegment
+                    End="19.5,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.5,16.5"
+                    Point2="23.5,16.5"
+                    Point3="23.5,20.5" />
+                  <mssgle:LineSegment
+                    End="23.5,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-68.76173828125,21.5,161.0234765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Excel Source Output]"
+          TopLeft="159.5,102.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28,0"
+              Start="0,0"
+              End="20.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="20.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.6337109375,5,55.767421875,11.228515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow for Fact Tables\Data Flow Fact_Sales.Paths[Derived Column Output]"
+          TopLeft="345.5,104">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6036,7 +7602,7 @@ where [refTable].[EmailUser] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-23.94138671875,5,96.3827734375,11.609375"
+              BoundingBox="-3.63371093750001,5,55.767421875,11.228515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6044,7 +7610,53 @@ where [refTable].[EmailUser] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source">
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Product]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Time]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6062,7 +7674,7 @@ where [refTable].[EmailUser] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6072,30 +7684,7 @@ where [refTable].[EmailUser] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup TimeKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Time]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6108,7 +7697,7 @@ where [refTable].[EmailUser] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6118,30 +7707,7 @@ where [refTable].[EmailUser] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Lookup ProductKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Product]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6154,7 +7720,7 @@ where [refTable].[EmailUser] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6164,7 +7730,7 @@ where [refTable].[EmailUser] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6172,7 +7738,7 @@ where [refTable].[EmailUser] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\OLE DB Destination 1">
+    design-time-name="Package\Data Flow for Fact Tables\Data Flow Fact_Sales\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

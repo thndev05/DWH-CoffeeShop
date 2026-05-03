@@ -189,4 +189,100 @@ WHERE $PARTITION.PF_ByYear(DateKey) = 3
 -- = 6 → partition năm 2025 (DateKey >= 20250101)
 
 
+---------------------------------------------------------------------------------------
+-- TRUY VẤN OLAP
+----------------------------------------------------------------------------------------
 
+-- Q1 — Doanh thu theo Year, Month, StoreLocation (ROLLUP)
+SELECT 
+    d.Year, d.Month, s.StoreLocation,
+    SUM(f.Revenue)  AS TotalRevenue,
+    SUM(f.Quantity) AS TotalQuantity
+FROM Fact_Sales f
+JOIN Dim_Date  d ON f.DateKey  = d.DateKey
+JOIN Dim_Store s ON f.StoreKey = s.StoreKey
+GROUP BY ROLLUP(d.Year, d.Month, s.StoreLocation)
+ORDER BY d.Year, d.Month, s.StoreLocation;
+
+-- Q2 — Doanh thu theo Category và Month (CUBE)
+SELECT 
+    d.Month, p.Category,
+    SUM(f.Revenue)    AS TotalRevenue,
+    COUNT(f.SalesKey) AS TotalTransactions
+FROM Fact_Sales  f
+JOIN Dim_Date    d ON f.DateKey    = d.DateKey
+JOIN Dim_Product p ON f.ProductKey = p.ProductKey
+GROUP BY CUBE(d.Month, p.Category)
+ORDER BY d.Month, p.Category;
+
+-- Q3 — GROUPING SETS nhiều chiều
+SELECT 
+    d.Month, s.StoreLocation, p.Category,
+    SUM(f.Revenue) AS TotalRevenue
+FROM Fact_Sales  f
+JOIN Dim_Date    d ON f.DateKey    = d.DateKey
+JOIN Dim_Store   s ON f.StoreKey   = s.StoreKey
+JOIN Dim_Product p ON f.ProductKey = p.ProductKey
+GROUP BY GROUPING SETS (
+    (d.Month, s.StoreLocation),
+    (d.Month, p.Category),
+    (s.StoreLocation, p.Category),
+    (s.StoreLocation),
+    ()
+)
+ORDER BY d.Month, s.StoreLocation, p.Category;
+
+-- Q4 — RANK Top 10 sản phẩm bán chạy
+SELECT 
+    p.Category, p.Type, p.Detail,
+    SUM(f.Revenue)  AS TotalRevenue,
+    SUM(f.Quantity) AS TotalQty,
+    RANK() OVER (ORDER BY SUM(f.Revenue) DESC) AS RevenueRank
+FROM Fact_Sales  f
+JOIN Dim_Product p ON f.ProductKey = p.ProductKey
+GROUP BY p.Category, p.Type, p.Detail
+ORDER BY RevenueRank
+LIMIT 10;
+
+-- Q5 — LAG so sánh doanh thu tháng trước
+SELECT 
+    d.Year, d.Month,
+    SUM(f.Revenue) AS Revenue,
+    LAG(SUM(f.Revenue)) OVER (ORDER BY d.Year, d.Month) AS PrevMonthRevenue,
+    SUM(f.Revenue) - LAG(SUM(f.Revenue)) OVER (ORDER BY d.Year, d.Month) AS Difference,
+    ROUND(
+        100.0 * (SUM(f.Revenue) - LAG(SUM(f.Revenue)) OVER (ORDER BY d.Year, d.Month))
+        / NULLIF(LAG(SUM(f.Revenue)) OVER (ORDER BY d.Year, d.Month), 0), 2
+    ) AS GrowthPct
+FROM Fact_Sales f
+JOIN Dim_Date   d ON f.DateKey = d.DateKey
+GROUP BY d.Year, d.Month
+ORDER BY d.Year, d.Month;
+
+-- Q8 — DENSE_RANK top khách hàng theo từng chi nhánh
+
+SELECT 
+    s.StoreLocation, u.UserName, u.UserGender,
+    SUM(f.Revenue)    AS TotalSpend,
+    COUNT(f.SalesKey) AS TotalOrders,
+    DENSE_RANK() OVER (
+        PARTITION BY s.StoreLocation
+        ORDER BY SUM(f.Revenue) DESC
+    ) AS RankInStore
+FROM Fact_Sales f
+JOIN Dim_Store  s ON f.StoreKey = s.StoreKey
+JOIN Dim_User   u ON f.UserKey  = u.UserKey
+GROUP BY s.StoreLocation, u.UserName, u.UserGender
+ORDER BY s.StoreLocation, RankInStore;
+
+-- Q9 — Phân tích giờ cao điểm theo chi nhánh
+SELECT 
+    t.Hour, s.StoreLocation,
+    SUM(f.Revenue)         AS TotalRevenue,
+    COUNT(f.SalesKey)      AS TotalTransactions,
+    ROUND(AVG(f.Price), 2) AS AvgPrice
+FROM Fact_Sales f
+JOIN Dim_Time  t ON f.TimeKey  = t.TimeKey
+JOIN Dim_Store s ON f.StoreKey = s.StoreKey
+GROUP BY t.Hour, s.StoreLocation
+ORDER BY t.Hour, s.StoreLocation;
